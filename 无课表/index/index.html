@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="无课表,重庆邮电大学移通学院" />
+	<meta name="description" content="查询学生的无课表信息" />
+	<meta name="render" content="webkit"/>
+	<meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="iconfont/iconfont.js"></script>
+    <script src="js/app.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="./bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script src="./bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+<style>
+    #popLayer {
+        display: none;
+        background-color: #B3B3B3;
+        position: absolute;
+        height: 2000px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+        -moz-opacity: 0.8;
+        opacity:.80;
+        filter: alpha(opacity=80);/* 只支持IE6、7、8、9 */
+    }
+
+    /*弹出层*/
+    #popBox {
+        display: none;
+        background-color: #FFFFFF;
+        z-index: 11;
+        width: 500px;
+        height: 500px;
+        position:fixed;
+        top:0;
+        right:0;
+        left:0;
+        bottom:0;
+        margin:auto;
+    }
+
+    #popBox .close{
+        text-align: right;
+        margin-right: 5px;
+        background-color: #F8F8F8;
+    }
+
+    /*关闭按钮*/
+    #popBox .close a {
+        text-decoration: none;
+        color: #2D2C3B;
+    }
+</style>
+<div id="popLayer" ></div>
+<div id="popBox" style="border-radius: 13%">
+    <div class="close" style="margin-right: 50px;margin-top: 30px">
+        <a onclick="closeBox()"style="height: 50px;width: 40px">X</a>
+    </div>
+    <div class="con1" style="margin-left: 70px;margin-top: 40px">
+    <form action="">
+        <div class="form-group">
+            <label for="exampleInputEmail1">姓名</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="请输入姓名">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">学号</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="请输入学号">
+        </div>
+        <p>问题详述</p>
+        <input style="height: 130px;width: 380px">
+        <button type="submit" class="btn btn-default">提交</button>
+    </form>
+    </div>
+</div>
+    <header id="header">
+        <!-- 导航 -->
+
+
+            <nav class="navbar navbar-inverse" role="navigation">
+                <div class="container-fluid">
+
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand"  style="padding: 0px" href="#"><img src="img/YT.png" height="50px"></a>
+                    </div>
+
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#" onclick="popBox()">问题反馈</a></li>
+                        </ul>
+                        <form class="navbar-form navbar-left">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="搜索">
+                            </div>
+                            <button type="submit" class="btn btn-default">搜索</button>
+                        </form>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="curriculum.html">查询无课表（学生）</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">联系我们 <span class="caret"></span></a>
+
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">QQ:XXX</a></li>
+                                    <li><a href="#">微信:XXX</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">邮箱:XXX</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <script>
+                $('#navLi a').click(function (e) {
+                    e.preventDefault();
+                    $(this).tab('show');
+                })
+            </script>
+
+        <!-- 主体部分 -->
+        <div class="main">
+            <!-- 上面部分 -->
+            <img src="img/bg.png" alt="" class="wave">
+            <div class="container1">
+                <div class="img1">
+                <img class="img2" src="img/img-3.svg" alt="">
+            </div>
+            <div class="login-box">
+                <form action="">
+                    <img src="img/avatar.svg" alt="" class="avatar">
+                    <h2>部门查询</h2>
+                    <div class="input-group1">
+                        <div class="icon">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        <div>
+                            <input type="text" class="input2" placeholder="Username">
+                       </div>
+                    </div>
+                    <div class="input-group1">
+                        <div class="icon">
+                            <i class="fa fa-lock"></i>
+                        </div>
+                        <div>
+                            <input type="password" class="input2" placeholder="Password">
+                        </div>
+                    </div>
+                <a href="#">忘记密码?</a>
+                <input type="submit" class="btn1" value="登录">
+            </form>
+        </div>
+    </div>
+
+
+            <!-- 中间部分 -->
+            <div class="hiddle-header">
+                <p>我们可以</p>
+            </div>
+            <div class="hiddle">
+                
+                <div class="box box1">
+                    <!-- 图标 -->
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-chaxun1"></use>
+                    </svg>
+                    <!-- 文字 -->
+                    <div class="txt">
+                        <h3>无课查询</h3>
+                        <p>只需输入学号姓名</p>
+                        <p>一键获取无课信息</p>
+                    </div>
+                </div>
+                <div class="box box2">
+                    <!-- 图标 -->
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-duoren"></use>
+                    </svg>
+                    <!-- 文字 -->
+                    <div class="txt">
+                        <h3>多人导入</h3>
+                        <p>学生组织或个人查询</p>
+                        <p>方便快捷</p>
+                    </div>
+                </div>
+                <div class="box box3">
+                    <!-- 图标 -->
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-tb_dayinji
+                        "></use>
+                    </svg>
+                    <!-- 文字 -->
+                    <div class="txt">
+                        <h3>一键打印</h3>
+                        <p>导出Excel文件</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 我们团队  -->
+            <div class="team">
+                
+                <div class="team-header">
+                    <p>咱们团儿</p>
+                </div>
+                <div class="bigbox">
+                    <ul class="box">
+                        <li>
+                            <img src="http://q2.qlogo.cn/headimg_dl?dst_uin=1337814180&spec=5" />
+                            <p>江东山</p>
+                        </li>
+                        <li>
+                            <img src="http://q2.qlogo.cn/headimg_dl?dst_uin=1453701825&spec=5" />
+                            <p>魏宇</p>
+                        </li>
+                        <li>
+                            <img src="http://q2.qlogo.cn/headimg_dl?dst_uin=2942880232&spec=5" />
+                            <p>刘爽</p>
+                        </li>
+                        <li>
+                            <img src="http://q2.qlogo.cn/headimg_dl?dst_uin=1994546240&spec=5" />
+                            <p>冉利</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+
+
+            <!-- 底部 -->
+            <footer id="footer">
+                <div class="company" style="width: 100%;height: 90px;line-height: 69px;background: #3d3d3f;color:#ffffff;text-align: center;font-size: 24px">
+                    <p style="margin: 0;padding: 0;box-sizing: border-box;font-family: '微软雅黑'"><img width="144" src="http://www.cqyti.com/dfiles/guanwang_cqyti_com/themes/10000/default/images/logo.png">重庆邮电大学移通学院 版权所有 | 地址：重庆市合川大学城假日大道1号 | 邮编：401520 | 渝ICP备12002696号-1 </p>
+                </div>
+            </footer>
+        </div>
+          
+    </header>
+
+
+
+
+    <script>
+        function popBox() {
+            var popBox = document.getElementById("popBox");
+            var popLayer = document.getElementById("popLayer");
+            popBox.style.display = "block";
+            popLayer.style.display = "block";
+        };
+
+        /*点击关闭按钮*/
+        function closeBox() {
+            var popBox = document.getElementById("popBox");
+            var popLayer = document.getElementById("popLayer");
+            popBox.style.display = "none";
+            popLayer.style.display = "none";
+        }
+          </script>
+</body>
+</html>

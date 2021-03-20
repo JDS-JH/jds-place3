@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/curriculum.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./bootstrap-3.3.7-dist/css/bootstrap.min.css">
+</head>
+<script src="node_modules/axios/dist/axios.js"></script>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script src="./bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script>
+    function request(config){
+        const instance=axios.create({
+            baseURL:'http://....',
+        })
+        return instance(config)
+    }
+</script>
+<body>
+<div class="box">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#" style="padding: 0px"><img src="img/YT.png" height="50px"></a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+                <ul class="nav navbar-nav" id="navLi">
+                    <li class="active"><a href="index.html">返回首页</a></li>
+                    <li><a class="1" href="#">功能介绍</a></li>
+                    <li><a class="1" href="#">用途</a></li>
+                    <li><button type="button" class="btn btn-success navbar-btn" id="printHtml" style="margin-right: 50px">点击打印此表</button></li>
+                    <li><button type="button" class="btn btn-success navbar-btn" id="printHtml2">点击转换为excel</button></li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">联系我们<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">QQ:XXX</a></li>
+                            <li><a href="#">微信:XXX</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">邮箱:XXX</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<script>
+    $('#navLi a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show');
+    })
+</script>
+    <div class="a">
+
+        <div class="table" style="width: 100%;height: 500px;">
+            <img class="img" src="img/bg.jpg" style="width: 100%;height: 500px">
+            <!--startprint-->
+            <div class="container">
+                <div class="row">
+
+            <div class="col-xs-4 col-md-6 col-lg-8"><table id="tab"><!--bordercolor="white"-->
+    <caption style="text-align: center">无课表查询</caption>
+    <tr><!--行-->
+        <th>\</th><!--列-->
+        <th>星期一</th>
+        <th>星期二</th>
+        <th>星期三</th>
+        <th>星期四</th>
+        <th>星期五</th>
+        <th>星期六</th>
+        <th>星期天</th>
+    </tr>
+    <tr>
+        <th>1</th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+    </tr>
+    <tr>
+    <th>2</th>
+    </tr>
+    <tr>
+        <th>3</th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+    </tr>
+    <tr>
+        <th>4</th>
+    </tr>
+    <tr>
+        <th>5</th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+    </tr>
+    <tr>
+        <th>6</th>
+
+    </tr>
+    <tr>
+        <th>7</th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+    </tr>
+    <tr>
+        <th>8</th>
+    </tr>
+    <tr>
+        <th>9</th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+    </tr>
+    <tr>
+        <th>10</th>
+    </tr>
+    <tr>
+        <th>11</th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+        <th rowspan="2"></th>
+    </tr>
+    <tr>
+        <th>12</th>
+    </tr>
+    </thead>
+</table ></div>
+
+            <!--endprint-->
+            <div class="col-xs-8 col-md-6 col-lg-4"><div class="content" style="margin-right: 30px">
+                <div class="panel">
+                    <div class="group">
+                        <ul>
+                            <li>姓名</li>
+                            <li><input id="name" type="text" placeholder=" 请输入姓名" /></li>
+                        </ul>
+                        <ul>
+                            <li>学号</li>
+                            <li><input id="id" type="text" placeholder=" 请输入学号" /></li>
+                        </ul>
+                    </div>
+                    <div class="login">
+                        <button type="button" id="button">查询</button>
+                        <button type="button" id="button2">重新查询</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+                </div>
+            </div>
+</div>
+    </div>
+
+</div>
+<footer id="footer">
+    <div class="company" style="width: 100%;height: 90px;line-height: 69px;background: #3d3d3f;color:#ffffff;text-align: center;font-size: 24px">
+        <p style="margin: 0;padding: 0;box-sizing: border-box;font-family: '微软雅黑'"><img width="144" src="http://www.cqyti.com/dfiles/guanwang_cqyti_com/themes/10000/default/images/logo.png">重庆邮电大学移通学院 版权所有 | 地址：重庆市合川大学城假日大道1号 | 邮编：401520 | 渝ICP备12002696号-1 </p>
+    </div>
+</footer>
+</body>
+<script src="js/curriculum.js" defer="defer" ></script>
+<script src="js/print.js" defer="defer"></script>
+<script src="js/导出excle.js"></script>
+</html>
